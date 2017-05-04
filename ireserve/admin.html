@@ -2,34 +2,36 @@
 <html>
     <head>
 		<title></title>
-		<script src="https://ajax.googleapis.com/ ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="script.js"></script>
 		<link rel="stylesheet" href="style.css">
     </head>
     <body>
-		<div class="login-pane">
+		<div id="login-pane" class="login-pane">
 			<div class="form">
 				<span class="pane-header">LOGIN</span><br/><br/>
 				<form class="login-form" method="post">
-					<input type="text" name="username" placeholder="username"/>
-					<input type="password" name="password" placeholder="password"/>
-					<button onclick="alert('clicked!');">submit</button>
+					<input type="text" name="username" placeholder="username" style="width:100%"/>
+					<input type="password" name="password" placeholder="password" style="width:100%"/>
+					<button id="login_submit" style="width:100%" onclick="onLoginSubmit()">submit</button>
 				</form>	
 			</div>
 		</div>
-		<div>
+		<div id="admin-pane" class="admin-pane" style="display:none">
+			<div class="form" style="text-align:left;">
+			<span class="pane-header">RESERVATION</span><br/><br/>
 			<form method="post">
-				<input type="text" name="search" placeholder="please input keyword here to search"/>
 				<div id="model">
-					<h2>Model</h2>
-					<input name="model" type="radio" value="0" checked="true" />16 GB&nbsp;&nbsp;
+					<span>Filter the reservation list by model: </span>
+					<input name="model" type="radio" value="0" />16 GB&nbsp;&nbsp;
 					<input name="model" type="radio" value="1" />32 GB&nbsp;&nbsp;
 					<input name="model" type="radio" value="2" />64 GB&nbsp;&nbsp;
 					<input name="model" type="radio" value="3" />128 GB&nbsp;&nbsp;
-					<input name="model" type="radio" value="4" />ALL<br/>
+					<input name="model" type="radio" value="4" checked="true" />ALL
 				</div>
-				<button>search</button>
+				<button>submit</button>
 			</form>
+			</div>
 		</div>
     </body>
 </html>
